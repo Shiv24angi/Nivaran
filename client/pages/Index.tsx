@@ -6,6 +6,7 @@ import { TechStackSection } from "@/components/home/TechStackSection";
 import { Testimonials } from "@/components/home/Testimonials";
 import { ContactPanel } from "@/components/home/ContactPanel";
 import { StoreBadges } from "@/components/common/StoreBadges";
+import { Camera, Shuffle, User, Bell, BarChart2 } from "lucide-react";
 
 export default function Index() {
   return (
@@ -13,6 +14,45 @@ export default function Index() {
       <Hero />
       <HowItWorks />
       <PartnersMarquee />
+
+      <section id="workflow" className="py-16 bg-white">
+        <div className="container">
+          <div className="text-center">
+            <h2 className="text-3xl font-extrabold text-gray-900">Workflow</h2>
+            <p className="mt-2 text-gray-600">How Nivaran routes reports from citizens to resolution</p>
+          </div>
+
+          <div className="mt-10 flex justify-center">
+            <div className="max-w-4xl w-full">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2Fbe8b85e214da4701834e57936a69c599%2Faa394ce3d0c4482485618c2fee113ffb?format=webp&width=800"
+                alt="Workflow diagram"
+                className="w-full h-auto rounded-2xl shadow-md"
+                loading="lazy"
+              />
+            </div>
+          </div>
+
+          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+            {[
+              { icon: Camera, title: "Citizen Submits a Report" },
+              { icon: Shuffle, title: "Smart Routing Engine" },
+              { icon: User, title: "Staff Takes Action" },
+              { icon: Bell, title: "Instant Notifications" },
+              { icon: BarChart2, title: "Admin Management" },
+            ].map((s) => (
+              <div key={s.title} className="rounded-2xl border border-gray-200 p-6 text-center shadow-sm bg-white">
+                <div className="mx-auto w-12 h-12 grid place-items-center rounded-full bg-brand-cream text-gray-900">
+                  <s.icon className="size-5" />
+                </div>
+                <h3 className="mt-4 text-sm font-semibold text-gray-900">{s.title}</h3>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
       <TechStackSection />
       <Testimonials />
       <ContactPanel />
