@@ -10,6 +10,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Placeholder from "./pages/Placeholder";
 import TechStack from "./pages/TechStack";
+import StartSnapping from "./pages/StartSnapping";
 import { Layout } from "@/components/site/Layout";
 
 const queryClient = new QueryClient();
@@ -31,7 +32,7 @@ const App = () => (
               element={<Placeholder title="Help Centre" />}
             />
             <Route path="send" element={<Placeholder title="Send a Snap" />} />
-            <Route path="start-snapping" element={React.createElement(require("./pages/StartSnapping").default)} />
+            <Route path="start-snapping" element={<StartSnapping />} />
             <Route path="techstack" element={<TechStack />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
