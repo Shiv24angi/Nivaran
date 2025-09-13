@@ -28,7 +28,7 @@ export function HowItWorks() {
       <div className="container">
         <div className="text-center max-w-2xl mx-auto">
           <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-gray-900">
-            How See Say Sort Works
+            How Nivaran Works
           </h2>
           <p className="mt-4 text-gray-600">
             A simple three-step process to get things sorted fast.

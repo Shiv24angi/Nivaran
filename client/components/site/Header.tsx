@@ -18,9 +18,9 @@ export function Header() {
         <Link to="/" className="flex items-center gap-2">
           <div className="size-3 rounded-full bg-brand-lime" />
           <span className="sr-only">Home</span>
-          <div className="text-xl font-extrabold tracking-tight text-gray-900">
-            See <span className="text-brand-blue">Say</span>{" "}
-            <span className="text-brand-orange">Sort</span>
+          <div>
+            <div className="text-xl font-extrabold tracking-tight text-gray-900">Nivaran</div>
+            <div className="text-xs text-gray-500 -mt-0.5">Aapki shikayat, hamara nivaran</div>
           </div>
         </Link>
 
