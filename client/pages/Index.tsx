@@ -15,11 +15,17 @@ export default function Index() {
       <HowItWorks />
       <PartnersMarquee />
 
-      <section id="workflow" className="py-16" style={{ backgroundColor: "#f4f6f2" }}>
+      <section
+        id="workflow"
+        className="py-16"
+        style={{ backgroundColor: "#f4f6f2" }}
+      >
         <div className="container">
           <div className="text-center">
             <h2 className="text-3xl font-extrabold text-gray-900">Workflow</h2>
-            <p className="mt-2 text-gray-600">How Nivaran routes reports from citizens to resolution</p>
+            <p className="mt-2 text-gray-600">
+              How Nivaran routes reports from citizens to resolution
+            </p>
           </div>
 
           <div className="mt-10 flex justify-center">
@@ -32,7 +38,6 @@ export default function Index() {
               />
             </div>
           </div>
-
         </div>
       </section>
 
