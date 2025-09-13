@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 
 const nav = [
-  { to: "#about", label: "About Us" },
-  { to: "#testimonials", label: "Snappers" },
-  { to: "#partners", label: "Solvers" },
-  { to: "#contact", label: "Help Centre" },
+  { to: "/#about", label: "About Us" },
+  { to: "/#testimonials", label: "Snappers" },
+  { to: "/#partners", label: "Solvers" },
+  { to: "/#contact", label: "Help Centre" },
 ];
 
 export function Header() {
@@ -34,12 +34,12 @@ export function Header() {
               {n.label}
             </a>
           ))}
-          <a
-            href="#contact"
+          <Link
+            to="/start-snapping"
             className="inline-flex items-center rounded-lg bg-brand-cta text-gray-900 px-4 py-2 text-sm font-semibold shadow-sm hover:brightness-95 transition"
           >
             Report now
-          </a>
+          </Link>
         </nav>
 
         <button
@@ -65,13 +65,13 @@ export function Header() {
                 {n.label}
               </a>
             ))}
-            <a
-              href="#contact"
+            <Link
+              to="/start-snapping"
               onClick={() => setOpen(false)}
               className="inline-flex items-center rounded-lg bg-brand-cta text-gray-900 px-4 py-2 text-sm font-semibold shadow-sm w-max"
             >
               Report now
-            </a>
+            </Link>
           </div>
         </div>
       )}
