@@ -4,8 +4,8 @@ import { Menu, X } from "lucide-react";
 
 const nav = [
   { to: "/#about", label: "About Us" },
-  { to: "/#testimonials", label: "Snappers" },
-  { to: "/#partners", label: "Solvers" },
+  { to: "/#testimonials", label: "Nivcrew" },
+  { to: "/#partners", label: "Nivsewaks" },
   { to: "/#contact", label: "Help Centre" },
 ];
 

@@ -12,23 +12,23 @@ const groups = [
     ],
   },
   {
-    title: "Snappers",
+    title: "Nivcrew",
     links: [
-      { label: "What is a Snapper?", to: "/snappers" },
+      { label: "What is a Nivcrew?", to: "/snappers" },
       { label: "What to Snap", to: "/snappers" },
       { label: "Where to Snap", to: "/snappers" },
       { label: "Events", to: "/snappers" },
-      { label: "Snapper Kit", to: "/snappers" },
+      { label: "Nivcrew Kit", to: "/snappers" },
     ],
   },
   {
-    title: "Solvers",
+    title: "Nivsewaks",
     links: [
-      { label: "Who are our Solvers?", to: "/solvers" },
+      { label: "Who are our Nivsewaks?", to: "/solvers" },
       { label: "Local Government", to: "/solvers" },
       { label: "Utilities", to: "/solvers" },
       { label: "Universities", to: "/solvers" },
-      { label: "Solver Kit", to: "/solvers" },
+      { label: "Nivsewak Kit", to: "/solvers" },
     ],
   },
   {
