@@ -52,7 +52,7 @@ export function HowItWorks() {
 
         <div className="mt-12 text-center">
           <a
-            href="#contact"
+            href="/start-snapping"
             className="inline-flex items-center rounded-full bg-brand-cta text-gray-900 px-6 py-3 text-sm font-semibold hover:brightness-95"
           >
             Start Sorting
