@@ -31,6 +31,7 @@ const App = () => (
               element={<Placeholder title="Help Centre" />}
             />
             <Route path="send" element={<Placeholder title="Send a Snap" />} />
+            <Route path="start-snapping" element={React.createElement(require("./pages/StartSnapping").default)} />
             <Route path="techstack" element={<TechStack />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
