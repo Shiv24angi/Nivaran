@@ -6,7 +6,7 @@ const steps = [
     desc: "Spot an issue around you — roads, lighting, sanitation and more.",
   },
   {
-    img: "https://cdn.builder.io/api/v1/image/assets%2Fbe8b85e214da4701834e57936a69c599%2Ff29e4b434a8b49adbc6c6c6cadce83bc?format=webp&width=800",
+    img: "https://cdn.builder.io/api/v1/image/assets%2Fbe8b85e214da4701834e57936a69c599%2F51ac7ee802094f1aa63277a70a3fe43c?format=webp&width=800",
     title: "Say",
     desc: "Report it instantly in the app. No clunky forms or hold times.",
   },
