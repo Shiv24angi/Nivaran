@@ -1,24 +1,19 @@
 import React from "react";
-import { Eye, Megaphone, CheckCircle2 } from "lucide-react";
-
 const steps = [
   {
-    icon: Eye,
+    img: "https://cdn.builder.io/api/v1/image/assets%2Fbe8b85e214da4701834e57936a69c599%2F5b23fe827caf4b33b9f65e580e2d5954?format=webp&width=800",
     title: "See",
     desc: "Spot an issue around you — roads, lighting, sanitation and more.",
-    color: "text-brand-lime",
   },
   {
-    icon: Megaphone,
+    img: "https://cdn.builder.io/api/v1/image/assets%2Fbe8b85e214da4701834e57936a69c599%2Ff29e4b434a8b49adbc6c6c6cadce83bc?format=webp&width=800",
     title: "Say",
     desc: "Report it instantly in the app. No clunky forms or hold times.",
-    color: "text-brand-blue",
   },
   {
-    icon: CheckCircle2,
+    img: "https://cdn.builder.io/api/v1/image/assets%2Fbe8b85e214da4701834e57936a69c599%2Fa8b0c3f1f3df462fa12830c313efaea3?format=webp&width=800",
     title: "Sort",
     desc: "We route it to the right department so it gets resolved.",
-    color: "text-brand-orange",
   },
 ];
 
@@ -37,14 +32,11 @@ export function HowItWorks() {
 
         <div className="mt-12 grid md:grid-cols-3 gap-6">
           {steps.map((s) => (
-            <div
-              key={s.title}
-              className="rounded-2xl border border-gray-200 p-8 hover:shadow-lg transition shadow-sm"
-            >
-              <s.icon className={`size-10 ${s.color}`} />
-              <h3 className="mt-4 text-xl font-semibold text-gray-900">
-                {s.title}
-              </h3>
+            <div key={s.title} className="rounded-2xl border border-gray-200 p-8 hover:shadow-lg transition shadow-sm">
+              <div className="mx-auto w-28 h-28 rounded-full overflow-hidden bg-white grid place-items-center shadow-sm">
+                <img src={s.img} alt={s.title} className="w-full h-full object-cover" />
+              </div>
+              <h3 className="mt-4 text-xl font-semibold text-gray-900">{s.title}</h3>
               <p className="mt-2 text-gray-600">{s.desc}</p>
             </div>
           ))}
