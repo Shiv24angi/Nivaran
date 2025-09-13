@@ -25,7 +25,7 @@ export default function Index() {
           <div className="mt-10 flex justify-center">
             <div className="max-w-4xl w-full">
               <img
-                src="https://cdn.builder.io/api/v1/image/assets%2Fbe8b85e214da4701834e57936a69c599%2Faa394ce3d0c4482485618c2fee113ffb?format=webp&width=800"
+                src="https://cdn.builder.io/api/v1/image/assets%2Fbe8b85e214da4701834e57936a69c599%2F7f8086a247014272a796dd7bb911e178?format=webp&width=800"
                 alt="Workflow diagram"
                 className="w-full h-auto rounded-2xl shadow-md"
                 loading="lazy"
