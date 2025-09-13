@@ -32,12 +32,19 @@ export function HowItWorks() {
 
         <div className="mt-12 grid md:grid-cols-3 gap-6">
           {steps.map((s) => (
-            <div key={s.title} className="rounded-2xl border border-gray-200 p-8 hover:shadow-lg transition shadow-sm">
-              <div className="mx-auto w-28 h-28 rounded-full overflow-hidden bg-white grid place-items-center shadow-sm">
-                <img src={s.img} alt={s.title} className="w-full h-full object-cover" />
+            <div key={s.title} className="relative rounded-2xl overflow-hidden shadow-sm h-56" aria-label={s.title}>
+              <div
+                className="absolute inset-0 bg-cover bg-center"
+                style={{ backgroundImage: `url(${s.img})` }}
+                aria-hidden
+              />
+
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/40 to-transparent" />
+
+              <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
+                <h3 className="text-xl font-semibold text-white drop-shadow">{s.title}</h3>
+                <p className="mt-2 text-white/90 max-w-prose">{s.desc}</p>
               </div>
-              <h3 className="mt-4 text-xl font-semibold text-gray-900">{s.title}</h3>
-              <p className="mt-2 text-gray-600">{s.desc}</p>
             </div>
           ))}
         </div>
