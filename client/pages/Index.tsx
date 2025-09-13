@@ -15,7 +15,7 @@ export default function Index() {
       <HowItWorks />
       <PartnersMarquee />
 
-      <section id="workflow" className="py-16 bg-white">
+      <section id="workflow" className="py-16" style={{ backgroundColor: "#f4f6f2" }}>
         <div className="container">
           <div className="text-center">
             <h2 className="text-3xl font-extrabold text-gray-900">Workflow</h2>
@@ -31,23 +31,6 @@ export default function Index() {
                 loading="lazy"
               />
             </div>
-          </div>
-
-          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-            {[
-              { icon: Camera, title: "Citizen Submits a Report" },
-              { icon: Shuffle, title: "Smart Routing Engine" },
-              { icon: User, title: "Staff Takes Action" },
-              { icon: Bell, title: "Instant Notifications" },
-              { icon: BarChart2, title: "Admin Management" },
-            ].map((s) => (
-              <div key={s.title} className="rounded-2xl border border-gray-200 p-6 text-center shadow-sm bg-white">
-                <div className="mx-auto w-12 h-12 grid place-items-center rounded-full bg-brand-cream text-gray-900">
-                  <s.icon className="size-5" />
-                </div>
-                <h3 className="mt-4 text-sm font-semibold text-gray-900">{s.title}</h3>
-              </div>
-            ))}
           </div>
 
         </div>
