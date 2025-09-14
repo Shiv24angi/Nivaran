@@ -11,8 +11,11 @@ export function Hero() {
       <div className="container grid md:grid-cols-2 gap-12 items-center py-20">
         <div>
           <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight">
-            See it. Say it. Sort it.
+            Nivaran
           </h1>
+          <p className="mt-4 text-lg font-semibold text-white/90 max-w-prose">
+            Aapki shikayat, hamara nivaran
+          </p>
           <p className="mt-6 text-lg text-white/80 max-w-prose">
             Report issues across Jharkhand to the right authorities — faster,
             simpler, and more effective.

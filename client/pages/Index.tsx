@@ -6,6 +6,7 @@ import { TechStackSection } from "@/components/home/TechStackSection";
 import { Testimonials } from "@/components/home/Testimonials";
 import { ContactPanel } from "@/components/home/ContactPanel";
 import { StoreBadges } from "@/components/common/StoreBadges";
+import { Camera, Shuffle, User, Bell, BarChart2 } from "lucide-react";
 
 export default function Index() {
   return (
@@ -13,6 +14,33 @@ export default function Index() {
       <Hero />
       <HowItWorks />
       <PartnersMarquee />
+
+      <section
+        id="workflow"
+        className="py-16"
+        style={{ backgroundColor: "#f4f6f2" }}
+      >
+        <div className="container">
+          <div className="text-center">
+            <h2 className="text-3xl font-extrabold text-gray-900">Workflow</h2>
+            <p className="mt-2 text-gray-600">
+              How Nivaran routes reports from citizens to resolution
+            </p>
+          </div>
+
+          <div className="mt-10 flex justify-center">
+            <div className="max-w-4xl w-full">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2Fbe8b85e214da4701834e57936a69c599%2F7f8086a247014272a796dd7bb911e178?format=webp&width=800"
+                alt="Workflow diagram"
+                className="w-full h-auto rounded-2xl shadow-md"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       <TechStackSection />
       <Testimonials />
       <ContactPanel />

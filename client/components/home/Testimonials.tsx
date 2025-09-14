@@ -52,7 +52,7 @@ export function Testimonials() {
               What they're saying
             </h2>
             <p className="mt-2 text-gray-600">
-              Real Snappers share their experiences.
+              Real Nivcrew share their experiences.
             </p>
           </div>
           <div className="hidden md:flex items-center gap-2">

@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 
 const nav = [
-  { to: "#about", label: "About Us" },
-  { to: "#testimonials", label: "Snappers" },
-  { to: "#partners", label: "Solvers" },
-  { to: "#contact", label: "Help Centre" },
+  { to: "/#about", label: "About Us" },
+  { to: "/#testimonials", label: "Nivcrew" },
+  { to: "/#partners", label: "Nivsewaks" },
+  { to: "/#contact", label: "Help Centre" },
 ];
 
 export function Header() {
@@ -18,9 +18,13 @@ export function Header() {
         <Link to="/" className="flex items-center gap-2">
           <div className="size-3 rounded-full bg-brand-lime" />
           <span className="sr-only">Home</span>
-          <div className="text-xl font-extrabold tracking-tight text-gray-900">
-            See <span className="text-brand-blue">Say</span>{" "}
-            <span className="text-brand-orange">Sort</span>
+          <div>
+            <div className="text-xl font-extrabold tracking-tight text-gray-900">
+              Nivaran
+            </div>
+            <div className="text-xs text-gray-500 -mt-0.5">
+              Aapki shikayat, hamara nivaran
+            </div>
           </div>
         </Link>
 
@@ -34,12 +38,12 @@ export function Header() {
               {n.label}
             </a>
           ))}
-          <a
-            href="#contact"
+          <Link
+            to="/start-snapping"
             className="inline-flex items-center rounded-lg bg-brand-cta text-gray-900 px-4 py-2 text-sm font-semibold shadow-sm hover:brightness-95 transition"
           >
             Report now
-          </a>
+          </Link>
         </nav>
 
         <button
@@ -65,13 +69,13 @@ export function Header() {
                 {n.label}
               </a>
             ))}
-            <a
-              href="#contact"
+            <Link
+              to="/start-snapping"
               onClick={() => setOpen(false)}
               className="inline-flex items-center rounded-lg bg-brand-cta text-gray-900 px-4 py-2 text-sm font-semibold shadow-sm w-max"
             >
               Report now
-            </a>
+            </Link>
           </div>
         </div>
       )}
