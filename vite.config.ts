@@ -10,7 +10,8 @@ export default defineConfig(({ mode }) => ({
     port: Number(process.env.PORT) || 8080,
     strictPort: false, // fall back if the port is taken
     fs: {
-      allow: ["./client", "./shared"],
+      // Allow serving files from project root, client and shared dirs
+      allow: [path.resolve(__dirname, "."), path.resolve(__dirname, "./client"), path.resolve(__dirname, "./shared")],
       deny: [".env", ".env.*", "*.{crt,pem}", "**/.git/**", "server/**"],
     },
   },
