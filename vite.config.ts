@@ -11,7 +11,11 @@ export default defineConfig(({ mode }) => ({
     strictPort: false, // fall back if the port is taken
     fs: {
       // Allow serving files from project root, client and shared dirs
-      allow: [path.resolve(__dirname, "."), path.resolve(__dirname, "./client"), path.resolve(__dirname, "./shared")],
+      allow: [
+        path.resolve(__dirname, "."),
+        path.resolve(__dirname, "./client"),
+        path.resolve(__dirname, "./shared"),
+      ],
       deny: [".env", ".env.*", "*.{crt,pem}", "**/.git/**", "server/**"],
     },
   },
