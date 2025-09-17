@@ -15,17 +15,22 @@ const LazyMenuBar = React.lazy(() =>
 );
 
 function MenuBarWrapper() {
-  const [active, setActive] = useState<
-    | "dashboard"
-    | "notifications"
-    | "settings"
-    | "help"
-    | "security"
-  >("dashboard");
+  const normalize = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  const items = nav.map((n) => ({ key: normalize(n.label), label: n.label, to: n.to }));
+  const [active, setActive] = useState<string>(items[0]?.key ?? "");
+
+  const handleSelect = (key: string) => {
+    setActive(key);
+    const item = items.find((i) => i.key === key);
+    if (item?.to) {
+      // navigate to anchor/path
+      window.location.href = item.to;
+    }
+  };
 
   return (
     <React.Suspense fallback={<div className="w-24 h-10" />}>
-      <LazyMenuBar active={active} onSelect={setActive} />
+      <LazyMenuBar items={items} active={active} onSelect={handleSelect} />
     </React.Suspense>
   );
 }
