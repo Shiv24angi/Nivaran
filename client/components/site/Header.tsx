@@ -16,7 +16,46 @@ const LazyMenuBar = React.lazy(() =>
 
 function MenuBarWrapper() {
   const normalize = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
-  const items = nav.map((n) => ({ key: normalize(n.label), label: n.label, to: n.to }));
+
+  const getIcon = (label: string) => {
+    const key = label.toLowerCase();
+    if (key.includes("about")) {
+      return (
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden>
+          <circle cx="12" cy="12" r="10" />
+          <path d="M12 8v4" />
+          <path d="M12 16h.01" />
+        </svg>
+      );
+    }
+    if (key.includes("nivcrew")) {
+      return (
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden>
+          <path d="M17 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+          <circle cx="12" cy="7" r="4" />
+        </svg>
+      );
+    }
+    if (key.includes("nivsewaks")) {
+      return (
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden>
+          <path d="M3 7h18" />
+          <path d="M6 7v10a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7" />
+        </svg>
+      );
+    }
+    if (key.includes("help")) {
+      return (
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden>
+          <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z" />
+          <path d="M9.09 9a3 3 0 1 1 5.82 1c0 2-3 3-3 3" />
+        </svg>
+      );
+    }
+    return null;
+  };
+
+  const items = nav.map((n) => ({ key: normalize(n.label), label: n.label, to: n.to, icon: getIcon(n.label) }));
   const [active, setActive] = useState<string>(items[0]?.key ?? "");
 
   const handleSelect = (key: string) => {
