@@ -79,7 +79,7 @@ const IconButton: React.FC<IconButtonProps> = ({ icon, label, active, onClick })
     };
   }, []);
 
-  const baseClasses = `transition-colors duration-200 inline-flex items-center justify-center rounded-lg px-4 py-2 text-sm font-medium border focus:outline-none`;
+  const baseClasses = `transition-colors duration-200 inline-flex items-center justify-start rounded-lg px-4 py-2 text-sm font-medium border focus:outline-none relative overflow-hidden`;
   const activeClasses = `border-brand-cta bg-brand-cta text-gray-900 font-semibold`;
   const inactiveClasses = `border-transparent text-gray-600 hover:text-gray-900 hover:bg-gray-50 dark:text-zinc-300 dark:hover:text-white`;
 
@@ -105,11 +105,22 @@ const IconButton: React.FC<IconButtonProps> = ({ icon, label, active, onClick })
         {label}
       </span>
 
+      {/* Icon */}
       {icon ? (
-        <span className="mr-2 flex items-center justify-center size-5">{icon}</span>
+        <span className="flex items-center justify-center size-5 text-lg text-current">{icon}</span>
       ) : null}
 
-      <span className={`whitespace-nowrap`}>{label}</span>
+      {/* Label: hidden unless hovered or active */}
+      <span
+        className={`ml-3 text-sm transition-all duration-200 whitespace-nowrap inline-block ${
+          isExpanded ? "opacity-100 w-auto" : "opacity-0 w-0"
+        }`}
+        style={{
+          transition: "opacity 0.2s, width 0.25s",
+        }}
+      >
+        {label}
+      </span>
     </button>
   );
 };
