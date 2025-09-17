@@ -9,6 +9,27 @@ const nav = [
   { to: "/#contact", label: "Help Centre" },
 ];
 
+// Lazy-load MenuBar from UI components to keep header lightweight
+const LazyMenuBar = React.lazy(() =>
+  import("@/components/ui/animated-menu-bar").then((m) => ({ default: m.MenuBar || m.default }))
+);
+
+function MenuBarWrapper() {
+  const [active, setActive] = useState<
+    | "dashboard"
+    | "notifications"
+    | "settings"
+    | "help"
+    | "security"
+  >("dashboard");
+
+  return (
+    <React.Suspense fallback={<div className="w-24 h-10" />}>
+      <LazyMenuBar active={active} onSelect={setActive} />
+    </React.Suspense>
+  );
+}
+
 export function Header() {
   const [open, setOpen] = useState(false);
 
