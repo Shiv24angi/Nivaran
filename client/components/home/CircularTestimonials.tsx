@@ -160,7 +160,7 @@ export const CircularTestimonials: React.FC<CircularTestimonialsProps> = ({
   };
 
   return (
-    <div className="testimonial-container w-full max-w-3xl px-6 py-8 mx-auto">
+    <div className="testimonial-container w-full max-w-4xl px-6 py-8 mx-auto">
       <div className="testimonial-grid">
         <div className="image-container" ref={imageContainerRef}>
           {testimonials.map((testimonial, index) => (
@@ -185,13 +185,23 @@ export const CircularTestimonials: React.FC<CircularTestimonialsProps> = ({
               exit="exit"
               transition={{ duration: 0.3, ease: "easeInOut" }}
             >
-              <h3 className="name font-bold" style={{ color: colorName, fontSize: fontSizeName }}>
-                {activeTestimonial.name}
-              </h3>
-              <p className="designation" style={{ color: colorDesignation, fontSize: fontSizeDesignation }}>
-                {activeTestimonial.designation}
-              </p>
-              <motion.p className="quote mt-4" style={{ color: colorTestimony, fontSize: fontSizeQuote }}>
+              <div className="flex items-center gap-4">
+                <img
+                  src={activeTestimonial.src}
+                  alt={activeTestimonial.name}
+                  className="w-12 h-12 rounded-full object-cover border border-gray-200"
+                />
+                <div>
+                  <h3 className="name font-bold" style={{ color: colorName, fontSize: fontSizeName }}>
+                    {activeTestimonial.name}
+                  </h3>
+                  <p className="designation text-sm" style={{ color: colorDesignation, fontSize: fontSizeDesignation }}>
+                    {activeTestimonial.designation}
+                  </p>
+                </div>
+              </div>
+
+              <motion.p className="quote mt-6" style={{ color: colorTestimony, fontSize: fontSizeQuote }}>
                 {activeTestimonial.quote.split(" ").map((word, i) => (
                   <motion.span
                     key={i}
@@ -207,7 +217,7 @@ export const CircularTestimonials: React.FC<CircularTestimonialsProps> = ({
             </motion.div>
           </AnimatePresence>
 
-          <div className="arrow-buttons mt-6 flex gap-4">
+          <div className="arrow-buttons mt-8 flex gap-4">
             <button
               className="arrow-button prev-button"
               onClick={handlePrev}
@@ -233,14 +243,15 @@ export const CircularTestimonials: React.FC<CircularTestimonialsProps> = ({
       </div>
 
       <style>{`
-        .testimonial-grid { display: grid; gap: 2rem; }
+        .testimonial-grid { display: grid; gap: 3rem; }
         @media (min-width: 768px) {
           .testimonial-grid { grid-template-columns: 1fr 1fr; align-items: center; }
+          .testimonial-content { padding-left: 1.5rem; }
         }
-        .image-container { position: relative; width: 100%; height: 18rem; perspective: 1000px; }
+        .image-container { position: relative; width: 100%; height: 20rem; perspective: 1000px; }
         .testimonial-image { position: absolute; width: 100%; height: 100%; object-fit: cover; border-radius: 1rem; box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
         .testimonial-content { display: flex; flex-direction: column; justify-content: center; }
-        .name { margin-bottom: 0.25rem; }
+        .name { margin-bottom: 0.125rem; }
         .designation { margin-bottom: 1rem; color: #6b7280; }
         .quote { line-height: 1.75; }
         .arrow-buttons { display: flex; }
