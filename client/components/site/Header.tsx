@@ -28,23 +28,27 @@ export function Header() {
           </div>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-8">
-          {nav.map((n) => (
-            <a
-              key={n.to}
-              href={n.to}
-              className="text-sm font-medium transition-colors text-gray-600 hover:text-gray-900"
-            >
-              {n.label}
-            </a>
-          ))}
+        <div className="hidden md:flex items-center gap-6">
+          {/* MenuBar component (icon + label expanded on hover) */}
+          <div className="hidden md:block">
+            {/* import locally to avoid changing top imports ordering */}
+            {/* @ts-ignore */}
+            {false}
+          </div>
+
+          <div className="hidden md:flex items-center">
+            {/* MenuBar will be dynamically imported to avoid SSR issues */}
+            {/* eslint-disable-next-line react/jsx-no-bind */}
+            <MenuBarWrapper />
+          </div>
+
           <Link
             to="/start-snapping"
-            className="inline-flex items-center rounded-lg bg-brand-cta text-gray-900 px-4 py-2 text-sm font-semibold shadow-sm hover:brightness-95 transition"
+            className="ml-4 inline-flex items-center rounded-lg bg-brand-cta text-gray-900 px-4 py-2 text-sm font-semibold shadow-sm hover:brightness-95 transition"
           >
             Report now
           </Link>
-        </nav>
+        </div>
 
         <button
           className="md:hidden inline-flex items-center justify-center rounded-md border border-gray-300 p-2 text-gray-700"
