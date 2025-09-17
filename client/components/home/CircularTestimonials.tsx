@@ -1,4 +1,10 @@
-import React, { useEffect, useRef, useState, useMemo, useCallback } from "react";
+import React, {
+  useEffect,
+  useRef,
+  useState,
+  useMemo,
+  useCallback,
+} from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -63,12 +69,14 @@ export const CircularTestimonials: React.FC<CircularTestimonialsProps> = ({
   const [containerWidth, setContainerWidth] = useState(1200);
 
   const imageContainerRef = useRef<HTMLDivElement>(null);
-  const autoplayIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const autoplayIntervalRef = useRef<ReturnType<typeof setInterval> | null>(
+    null,
+  );
 
   const testimonialsLength = useMemo(() => testimonials.length, [testimonials]);
   const activeTestimonial = useMemo(
     () => testimonials[activeIndex],
-    [activeIndex, testimonials]
+    [activeIndex, testimonials],
   );
 
   useEffect(() => {
@@ -89,7 +97,8 @@ export const CircularTestimonials: React.FC<CircularTestimonialsProps> = ({
       }, 5000);
     }
     return () => {
-      if (autoplayIntervalRef.current) clearInterval(autoplayIntervalRef.current as any);
+      if (autoplayIntervalRef.current)
+        clearInterval(autoplayIntervalRef.current as any);
     };
   }, [autoplay, testimonialsLength]);
 
@@ -104,19 +113,24 @@ export const CircularTestimonials: React.FC<CircularTestimonialsProps> = ({
 
   const handleNext = useCallback(() => {
     setActiveIndex((prev) => (prev + 1) % testimonialsLength);
-    if (autoplayIntervalRef.current) clearInterval(autoplayIntervalRef.current as any);
+    if (autoplayIntervalRef.current)
+      clearInterval(autoplayIntervalRef.current as any);
   }, [testimonialsLength]);
 
   const handlePrev = useCallback(() => {
-    setActiveIndex((prev) => (prev - 1 + testimonialsLength) % testimonialsLength);
-    if (autoplayIntervalRef.current) clearInterval(autoplayIntervalRef.current as any);
+    setActiveIndex(
+      (prev) => (prev - 1 + testimonialsLength) % testimonialsLength,
+    );
+    if (autoplayIntervalRef.current)
+      clearInterval(autoplayIntervalRef.current as any);
   }, [testimonialsLength]);
 
   function getImageStyle(index: number): React.CSSProperties {
     const gap = calculateGap(containerWidth);
     const maxStickUp = gap * 0.8;
     const isActive = index === activeIndex;
-    const isLeft = (activeIndex - 1 + testimonialsLength) % testimonialsLength === index;
+    const isLeft =
+      (activeIndex - 1 + testimonialsLength) % testimonialsLength === index;
     const isRight = (activeIndex + 1) % testimonialsLength === index;
     if (isActive) {
       return {
@@ -192,22 +206,38 @@ export const CircularTestimonials: React.FC<CircularTestimonialsProps> = ({
                   className="w-12 h-12 rounded-full object-cover border border-gray-200"
                 />
                 <div>
-                  <h3 className="name font-bold" style={{ color: colorName, fontSize: fontSizeName }}>
+                  <h3
+                    className="name font-bold"
+                    style={{ color: colorName, fontSize: fontSizeName }}
+                  >
                     {activeTestimonial.name}
                   </h3>
-                  <p className="designation text-sm" style={{ color: colorDesignation, fontSize: fontSizeDesignation }}>
+                  <p
+                    className="designation text-sm"
+                    style={{
+                      color: colorDesignation,
+                      fontSize: fontSizeDesignation,
+                    }}
+                  >
                     {activeTestimonial.designation}
                   </p>
                 </div>
               </div>
 
-              <motion.p className="quote mt-6" style={{ color: colorTestimony, fontSize: fontSizeQuote }}>
+              <motion.p
+                className="quote mt-6"
+                style={{ color: colorTestimony, fontSize: fontSizeQuote }}
+              >
                 {activeTestimonial.quote.split(" ").map((word, i) => (
                   <motion.span
                     key={i}
                     initial={{ filter: "blur(10px)", opacity: 0, y: 5 }}
                     animate={{ filter: "blur(0px)", opacity: 1, y: 0 }}
-                    transition={{ duration: 0.22, ease: "easeInOut", delay: 0.025 * i }}
+                    transition={{
+                      duration: 0.22,
+                      ease: "easeInOut",
+                      delay: 0.025 * i,
+                    }}
                     style={{ display: "inline-block" }}
                   >
                     {word}&nbsp;
@@ -221,7 +251,9 @@ export const CircularTestimonials: React.FC<CircularTestimonialsProps> = ({
             <button
               className="arrow-button prev-button"
               onClick={handlePrev}
-              style={{ backgroundColor: hoverPrev ? colorArrowHoverBg : colorArrowBg }}
+              style={{
+                backgroundColor: hoverPrev ? colorArrowHoverBg : colorArrowBg,
+              }}
               onMouseEnter={() => setHoverPrev(true)}
               onMouseLeave={() => setHoverPrev(false)}
               aria-label="Previous testimonial"
@@ -231,7 +263,9 @@ export const CircularTestimonials: React.FC<CircularTestimonialsProps> = ({
             <button
               className="arrow-button next-button"
               onClick={handleNext}
-              style={{ backgroundColor: hoverNext ? colorArrowHoverBg : colorArrowBg }}
+              style={{
+                backgroundColor: hoverNext ? colorArrowHoverBg : colorArrowBg,
+              }}
               onMouseEnter={() => setHoverNext(true)}
               onMouseLeave={() => setHoverNext(false)}
               aria-label="Next testimonial"
