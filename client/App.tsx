@@ -12,6 +12,7 @@ import Placeholder from "./pages/Placeholder";
 import TechStack from "./pages/TechStack";
 import StartSnapping from "./pages/StartSnapping";
 import { Layout } from "@/components/site/Layout";
+import DemoMenuBar from "./pages/DemoMenuBar";
 
 const queryClient = new QueryClient();
 
@@ -34,6 +35,7 @@ const App = () => (
             <Route path="send" element={<Placeholder title="Send a Snap" />} />
             <Route path="start-snapping" element={<StartSnapping />} />
             <Route path="techstack" element={<TechStack />} />
+            <Route path="demo-menubar" element={<DemoMenuBar />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Route>
