@@ -1,15 +1,15 @@
 import React from "react";
 
 const items = [
-  { title: "React 18", desc: "Component-based UI library powering the app." },
+  { title: "React", desc: "Component-based UI library powering the app." },
   {
     title: "TypeScript",
     desc: "Static typing for safer, more maintainable code.",
   },
-  { title: "Vite", desc: "Blazing-fast dev server and build tool." },
   { title: "TailwindCSS", desc: "Utility-first styling with design tokens." },
+  { title: "Firebase", desc: "Realtime database and auth for modern apps." },
   { title: "Express", desc: "Simple, robust Node.js server for APIs." },
-  { title: "Radix UI", desc: "Accessible primitives used where helpful." },
+  { title: "Node.js", desc: "JavaScript runtime for server-side logic." },
   { title: "Vitest", desc: "Fast unit testing framework." },
 ];
 
