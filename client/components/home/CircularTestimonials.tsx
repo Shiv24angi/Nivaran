@@ -283,7 +283,7 @@ export const CircularTestimonials: React.FC<CircularTestimonialsProps> = ({
           .testimonial-content { padding-left: 1.5rem; }
         }
         .image-container { position: relative; width: 100%; height: 20rem; perspective: 1000px; }
-        .testimonial-image { position: absolute; width: 100%; height: 100%; object-fit: cover; border-radius: 1rem; box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
+        .testimonial-image { position: absolute; width: 100%; height: 100%; object-fit: cover; object-position: center center; border-radius: 1rem; box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
         .testimonial-content { display: flex; flex-direction: column; justify-content: center; }
         .name { margin-bottom: 0.125rem; }
         .designation { margin-bottom: 1rem; color: #6b7280; }
