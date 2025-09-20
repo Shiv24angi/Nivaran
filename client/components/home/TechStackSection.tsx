@@ -93,6 +93,22 @@ export function TechStackSection() {
                 {s.icon && s.icon()}
               </div>
               <span className="text-gray-900">{s.name}</span>
+
+              {/* Cursor visual attached to this tile (shows when hovering the tile) */}
+              <Cursor
+                attachToParent
+                springConfig={{ stiffness: 300, damping: 28 }}
+                variants={{
+                  initial: { opacity: 0, scale: 0.6 },
+                  animate: { opacity: 1, scale: 1 },
+                  exit: { opacity: 0, scale: 0.6 },
+                }}
+                transition={{ type: 'spring', stiffness: 300, damping: 28 }}
+              >
+                <motion.div className="pointer-events-none w-8 h-8 rounded-full bg-brand-blue/90 flex items-center justify-center text-white text-xs shadow-lg">
+                  {/* empty or icon could go here */}
+                </motion.div>
+              </Cursor>
             </div>
           ))}
         </div>
