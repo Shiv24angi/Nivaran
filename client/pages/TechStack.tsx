@@ -31,7 +31,6 @@ export default function TechStack() {
                 {it.title}
               </h3>
               <p className="mt-1 text-gray-600">{it.desc}</p>
-              <p className="mt-2 text-sm text-gray-500">Powered by Gemini</p>
             </div>
           ))}
         </div>
