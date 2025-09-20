@@ -4,9 +4,11 @@ import { Menu, X } from "lucide-react";
 
 const nav = [
   { to: "/#about", label: "About Us" },
-  { to: "/#testimonials", label: "Nivcrew" },
-  { to: "/#partners", label: "Nivsewaks" },
+  { to: "/#partners", label: "Authorities" },
+  { to: "/#techstack", label: "Tech stack" },
+  { to: "/#testimonials", label: "Feedback" },
   { to: "/#contact", label: "Help Centre" },
+  { to: "/admin", label: "Admin Panel" },
 ];
 
 // Lazy-load MenuBar from UI components to keep header lightweight
