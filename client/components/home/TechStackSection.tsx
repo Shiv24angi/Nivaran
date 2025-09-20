@@ -93,7 +93,6 @@ export function TechStackSection() {
                 {s.icon && s.icon()}
               </div>
               <span className="text-gray-900">{s.name}</span>
-              <p className="mt-1 text-sm text-gray-500">Powered by Gemini</p>
             </div>
           ))}
         </div>
