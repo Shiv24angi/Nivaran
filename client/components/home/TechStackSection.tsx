@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const stack = [
   {
-    name: "React 18",
+    name: "React",
     color: "bg-brand-blue",
     icon: () => (
       <svg viewBox="0 0 24 24" className="h-5 w-5">
@@ -34,15 +34,6 @@ const stack = [
     icon: () => <span className="text-[10px] font-bold">TS</span>,
   },
   {
-    name: "Vite",
-    color: "bg-brand-orange",
-    icon: () => (
-      <svg viewBox="0 0 24 24" className="h-5 w-5">
-        <path d="M12 2L3 6l9 16 9-16-9-4z" fill="currentColor" />
-      </svg>
-    ),
-  },
-  {
     name: "TailwindCSS",
     color: "bg-brand-lime",
     icon: () => (
@@ -55,9 +46,13 @@ const stack = [
     ),
   },
   {
-    name: "Radix UI",
-    color: "bg-gray-800",
-    icon: () => <span className="text-[10px] font-bold">R</span>,
+    name: "Firebase",
+    color: "bg-yellow-600",
+    icon: () => (
+      <svg viewBox="0 0 24 24" className="h-5 w-5">
+        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.77 5.82 22 7 14.14 2 9.27l6.91-1.01L12 2z" fill="currentColor" />
+      </svg>
+    ),
   },
   {
     name: "Express",
@@ -89,36 +84,22 @@ export function TechStackSection() {
               Built with a modern toolchain for speed and reliability.
             </p>
           </div>
-          <Link
-            to="/techstack"
-            className="hidden md:inline-flex items-center rounded-lg bg-gray-900 text-white px-4 py-2 text-sm font-semibold hover:bg-gray-800"
-          >
-            View details
-          </Link>
         </div>
         <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
           {stack.map((s) => (
             <div
               key={s.name}
-              className="rounded-xl border border-gray-200 bg-white px-4 py-3 text-gray-800 shadow-sm flex items-center gap-3"
+              className={`relative cursor-pointer z-0 flex flex-col items-start gap-2 overflow-hidden rounded-md border border-zinc-300 bg-zinc-100 px-4 py-3 font-semibold text-zinc-800 transition-all duration-500 before:absolute before:inset-0 before:-z-10 before:translate-x-[150%] before:translate-y-[150%] before:scale-[2.5] before:rounded-[100%] before:bg-zinc-800 before:transition-transform before:duration-1000 before:content-["\""] hover:scale-105 hover:text-zinc-100 hover:before:translate-x-[0%] hover:before:translate-y-[0%] active:scale-95`}
             >
-              <div
-                className={`h-7 w-7 rounded-md text-white grid place-items-center ${s.color}`}
-              >
+              <div className={`h-7 w-7 rounded-md text-white grid place-items-center ${s.color}`}>
                 {s.icon && s.icon()}
               </div>
-              <span>{s.name}</span>
+              <span className="text-gray-900">{s.name}</span>
+              <p className="mt-1 text-sm text-gray-500">Powered by Gemini</p>
             </div>
           ))}
         </div>
-        <div className="mt-6 md:hidden">
-          <Link
-            to="/techstack"
-            className="inline-flex items-center rounded-lg bg-gray-900 text-white px-4 py-2 text-sm font-semibold hover:bg-gray-800"
-          >
-            View details
-          </Link>
-        </div>
+        <div className="mt-6 md:hidden" />
       </div>
     </section>
   );
