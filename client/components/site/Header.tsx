@@ -30,19 +30,26 @@ function MenuBarWrapper() {
         </svg>
       );
     }
-    if (key.includes("nivcrew")) {
+    if (key.includes("authorit") || key.includes("authorities") || key.includes("partners")) {
       return (
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden>
-          <path d="M17 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
-          <circle cx="12" cy="7" r="4" />
+          <rect x="3" y="7" width="18" height="11" rx="2" />
+          <path d="M7 7v-2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2" />
         </svg>
       );
     }
-    if (key.includes("nivsewaks")) {
+    if (key.includes("tech") || key.includes("stack")) {
       return (
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden>
-          <path d="M3 7h18" />
-          <path d="M6 7v10a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7" />
+          <path d="M3 12h18" />
+          <path d="M12 3v18" />
+        </svg>
+      );
+    }
+    if (key.includes("feedback") || key.includes("feedback")) {
+      return (
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden>
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
         </svg>
       );
     }
@@ -51,6 +58,13 @@ function MenuBarWrapper() {
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden>
           <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z" />
           <path d="M9.09 9a3 3 0 1 1 5.82 1c0 2-3 3-3 3" />
+        </svg>
+      );
+    }
+    if (key.includes("admin")) {
+      return (
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden>
+          <path d="M12 1l3 5 5 1-4 3 1 5-5-3-5 3 1-5-4-3 5-1 3-5z" />
         </svg>
       );
     }
