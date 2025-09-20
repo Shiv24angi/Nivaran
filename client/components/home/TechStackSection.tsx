@@ -89,7 +89,7 @@ export function TechStackSection() {
           {stack.map((s) => (
             <div
               key={s.name}
-              className={`relative cursor-pointer z-0 flex flex-col items-start gap-2 overflow-hidden rounded-md border border-zinc-300 bg-zinc-100 px-4 py-3 font-semibold text-zinc-800 transition-all duration-500 before:absolute before:inset-0 before:-z-10 before:translate-x-[150%] before:translate-y-[150%] before:scale-[2.5] before:rounded-[100%] before:bg-zinc-800 before:transition-transform before:duration-1000 before:content-["\""] hover:scale-105 hover:text-zinc-100 hover:before:translate-x-[0%] hover:before:translate-y-[0%] active:scale-95`}
+              className={`relative cursor-pointer z-0 flex flex-col items-start gap-2 overflow-hidden rounded-md border border-zinc-300 bg-zinc-100 px-4 py-3 font-semibold text-zinc-800 transition-all duration-500 before:absolute before:inset-0 before:-z-10 before:translate-x-[150%] before:translate-y-[150%] before:scale-[2.5] before:rounded-[100%] before:bg-brand-cta before:transition-transform before:duration-1000 before:content-["\""] hover:scale-105 hover:text-gray-900 hover:before:translate-x-[0%] hover:before:translate-y-[0%] active:scale-95`}
             >
               <div className={`h-7 w-7 rounded-md text-white grid place-items-center ${s.color}`}>
                 {s.icon && s.icon()}
