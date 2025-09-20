@@ -27,12 +27,13 @@ export default function TechStack() {
           {items.map((it) => (
             <div
               key={it.title}
-              className="rounded-2xl border border-gray-200 p-6 bg-white shadow-sm"
+              className={`relative cursor-pointer z-0 overflow-hidden rounded-2xl border border-zinc-300 bg-zinc-100 p-6 font-semibold text-zinc-800 transition-all duration-500 before:absolute before:inset-0 before:-z-10 before:translate-x-[150%] before:translate-y-[150%] before:scale-[2.5] before:rounded-[100%] before:bg-zinc-800 before:transition-transform before:duration-1000 before:content-["\""] hover:scale-105 hover:text-zinc-100 hover:before:translate-x-[0%] hover:before:translate-y-[0%] active:scale-95`}
             >
               <h3 className="text-lg font-semibold text-gray-900">
                 {it.title}
               </h3>
               <p className="mt-1 text-gray-600">{it.desc}</p>
+              <p className="mt-2 text-sm text-gray-500">Powered by Gemini</p>
             </div>
           ))}
         </div>
