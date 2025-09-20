@@ -21,7 +21,7 @@ export function Testimonials() {
             <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-gray-900">
               What they're saying
             </h2>
-            <p className="mt-2 text-gray-600">Real Nivcrew share their experiences.</p>
+            <p className="mt-2 text-gray-600">Real feedback from users.</p>
           </div>
         </div>
 
