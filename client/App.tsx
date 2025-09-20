@@ -27,7 +27,10 @@ const App = () => (
             <Route index element={<Index />} />
             <Route path="about-us" element={<Placeholder title="About Us" />} />
             <Route path="snappers" element={<Placeholder title="Users" />} />
-            <Route path="solvers" element={<Placeholder title="Authorities" />} />
+            <Route
+              path="solvers"
+              element={<Placeholder title="Authorities" />}
+            />
             <Route
               path="help-centre"
               element={<Placeholder title="Help Centre" />}

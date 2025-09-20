@@ -52,7 +52,10 @@ const stack = [
     color: "bg-yellow-600",
     icon: () => (
       <svg viewBox="0 0 24 24" className="h-5 w-5">
-        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.77 5.82 22 7 14.14 2 9.27l6.91-1.01L12 2z" fill="currentColor" />
+        <path
+          d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.77 5.82 22 7 14.14 2 9.27l6.91-1.01L12 2z"
+          fill="currentColor"
+        />
       </svg>
     ),
   },
@@ -91,7 +94,9 @@ export function TechStackSection() {
               key={s.name}
               className={`relative cursor-pointer z-0 flex flex-col items-start gap-2 overflow-hidden rounded-md border border-zinc-300 bg-zinc-100 px-4 py-3 font-semibold text-zinc-800 transition-all duration-500 before:absolute before:inset-0 before:-z-10 before:translate-x-[150%] before:translate-y-[150%] before:scale-[2.5] before:rounded-[100%] before:bg-brand-cta before:transition-transform before:duration-1000 before:content-["\""] hover:scale-105 hover:text-gray-900 hover:before:translate-x-[0%] hover:before:translate-y-[0%] active:scale-95`}
             >
-              <div className={`h-7 w-7 rounded-md text-white grid place-items-center ${s.color}`}>
+              <div
+                className={`h-7 w-7 rounded-md text-white grid place-items-center ${s.color}`}
+              >
                 {s.icon && s.icon()}
               </div>
               <span className="text-gray-900">{s.name}</span>
@@ -105,7 +110,7 @@ export function TechStackSection() {
                   animate: { opacity: 1, scale: 1 },
                   exit: { opacity: 0, scale: 0.6 },
                 }}
-                transition={{ type: 'spring', stiffness: 300, damping: 28 }}
+                transition={{ type: "spring", stiffness: 300, damping: 28 }}
               >
                 <motion.div className="pointer-events-none w-8 h-8 rounded-full bg-zinc-900 flex items-center justify-center text-white text-xs shadow-lg">
                   {/* empty or icon could go here */}

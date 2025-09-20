@@ -13,26 +13,52 @@ const nav = [
 
 // Lazy-load MenuBar from UI components to keep header lightweight
 const LazyMenuBar = React.lazy(() =>
-  import("@/components/ui/animated-menu-bar").then((m) => ({ default: m.MenuBar || m.default }))
+  import("@/components/ui/animated-menu-bar").then((m) => ({
+    default: m.MenuBar || m.default,
+  })),
 );
 
 function MenuBarWrapper() {
-  const normalize = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  const normalize = (s: string) =>
+    s
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-|-$/g, "");
 
   const getIcon = (label: string) => {
     const key = label.toLowerCase();
     if (key.includes("about")) {
       return (
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden>
+        <svg
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          aria-hidden
+        >
           <circle cx="12" cy="12" r="10" />
           <path d="M12 8v4" />
           <path d="M12 16h.01" />
         </svg>
       );
     }
-    if (key.includes("authorit") || key.includes("authorities") || key.includes("partners")) {
+    if (
+      key.includes("authorit") ||
+      key.includes("authorities") ||
+      key.includes("partners")
+    ) {
       return (
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden>
+        <svg
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          aria-hidden
+        >
           <rect x="3" y="7" width="18" height="11" rx="2" />
           <path d="M7 7v-2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2" />
         </svg>
@@ -40,7 +66,15 @@ function MenuBarWrapper() {
     }
     if (key.includes("tech") || key.includes("stack")) {
       return (
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden>
+        <svg
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          aria-hidden
+        >
           <path d="M3 12h18" />
           <path d="M12 3v18" />
         </svg>
@@ -48,14 +82,30 @@ function MenuBarWrapper() {
     }
     if (key.includes("feedback") || key.includes("feedback")) {
       return (
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden>
+        <svg
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          aria-hidden
+        >
           <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
         </svg>
       );
     }
     if (key.includes("help")) {
       return (
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden>
+        <svg
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          aria-hidden
+        >
           <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z" />
           <path d="M9.09 9a3 3 0 1 1 5.82 1c0 2-3 3-3 3" />
         </svg>
@@ -63,7 +113,15 @@ function MenuBarWrapper() {
     }
     if (key.includes("admin")) {
       return (
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden>
+        <svg
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          aria-hidden
+        >
           <path d="M12 1l3 5 5 1-4 3 1 5-5-3-5 3 1-5-4-3 5-1 3-5z" />
         </svg>
       );
@@ -71,7 +129,12 @@ function MenuBarWrapper() {
     return null;
   };
 
-  const items = nav.map((n) => ({ key: normalize(n.label), label: n.label, to: n.to, icon: getIcon(n.label) }));
+  const items = nav.map((n) => ({
+    key: normalize(n.label),
+    label: n.label,
+    to: n.to,
+    icon: getIcon(n.label),
+  }));
   const [active, setActive] = useState<string>(items[0]?.key ?? "");
 
   const handleSelect = (key: string) => {
