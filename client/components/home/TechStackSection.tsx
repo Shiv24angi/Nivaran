@@ -80,9 +80,7 @@ export function TechStackSection() {
             <h3 className="text-2xl md:text-3xl font-extrabold tracking-tight text-gray-900">
               Tech stack
             </h3>
-            <p className="mt-2 text-gray-600">
-              Built with a modern toolchain for speed and reliability.
-            </p>
+            <p className="mt-2 text-gray-600">Powered by Gemini</p>
           </div>
         </div>
         <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
