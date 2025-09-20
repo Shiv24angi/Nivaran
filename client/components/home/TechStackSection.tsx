@@ -107,7 +107,7 @@ export function TechStackSection() {
                 }}
                 transition={{ type: 'spring', stiffness: 300, damping: 28 }}
               >
-                <motion.div className="pointer-events-none w-8 h-8 rounded-full bg-brand-blue/90 flex items-center justify-center text-white text-xs shadow-lg">
+                <motion.div className="pointer-events-none w-8 h-8 rounded-full bg-brand-cta flex items-center justify-center text-gray-900 text-xs shadow-lg">
                   {/* empty or icon could go here */}
                 </motion.div>
               </Cursor>
